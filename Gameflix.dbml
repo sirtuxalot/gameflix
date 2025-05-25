@@ -30,6 +30,23 @@ table catalog {
   renter_id int
 }
 
+// table wishlist {
+//   user_id int
+//   game_id int
+//   date_added timestamp
+// }
+
+// table rental_history {
+//   user_id int
+//   game_id int
+//   date_rented timestamp
+// }
+
 Ref: subscriptions.subscription_id < users.subscription_id
 Ref: consoles.console_id < catalog.console_id
 Ref: users.user_id < catalog.renter_id
+
+//Ref: users.user_id < wishlist.renter_id
+//Ref: users.user_id < rental.renter_id
+//Ref: games.game_id < wishlist.game_id
+//Ref: games.game_id < rental.game_id
