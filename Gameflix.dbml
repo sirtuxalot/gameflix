@@ -6,6 +6,10 @@ table users {
   first_name string
   last_name string
   email string
+  address string
+  city string
+  state string
+  zip int
   password string
   subscription_id int
   access_level int
