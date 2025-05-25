@@ -42,11 +42,20 @@ table catalog {
 //   date_rented timestamp
 // }
 
+// table reviews {
+//   user_id int
+//   game_id int
+//   date_reviewed timestamp
+//   review text
+// }
+
 Ref: subscriptions.subscription_id < users.subscription_id
 Ref: consoles.console_id < catalog.console_id
 Ref: users.user_id < catalog.renter_id
 
-//Ref: users.user_id < wishlist.renter_id
-//Ref: users.user_id < rental.renter_id
+//Ref: users.user_id < wishlist.user_id
 //Ref: games.game_id < wishlist.game_id
-//Ref: games.game_id < rental.game_id
+//Ref: users.user_id < rental_history.user_id
+//Ref: games.game_id < rental_history.game_id
+//Ref: users.user_id < reviews.game_id
+//Ref: games.game_id < reviews.user_id
