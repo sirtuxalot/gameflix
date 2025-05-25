@@ -1,0 +1,34 @@
+// Use DBML to define your database structure
+// Docs: https://dbml.dbdiagram.io/docs
+
+table users {
+  user_id int [primary key]
+  first_name string
+  last_name string
+  email string
+  password string
+  subscription_id int
+}
+
+table subscriptions {
+  subscription_id int [primary key]
+  subscription_name string
+  rentals_allowed int
+  price string
+}
+
+table consoles {
+  console_id int [primary key]
+  console_name string
+}
+
+table catalog {
+  game_id int [primary key]
+  game_name string
+  console_id int
+  renter_id int
+}
+
+Ref: subscriptions.subscription_id < users.subscription_id
+Ref: consoles.console_id < catalog.console_id
+Ref: users.user_id < catalog.renter_id
