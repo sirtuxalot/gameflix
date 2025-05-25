@@ -8,6 +8,7 @@ table users {
   email string
   password string
   subscription_id int
+  access_level int
 }
 
 table subscriptions {
